@@ -12,13 +12,13 @@ if __name__ == '__main__':
     a = 3
     b = 3.246
     c = 5 + 1j
-    print(a,b,c)
+    print(a, b, c)
     # 1.分别赋值
-    a,b,c = 3,3.246,6+1j
-    print(a,b,c)
+    a, b, c = 3, 3.246, 6 + 1j
+    print(a, b, c)
     # 2.连续复制
-    a=b=c=4.2
-    print(a,b,c)
+    a = b = c = 4.2
+    print(a, b, c)
 
     print('————————————————————')
     # 2.1.3 字符串
@@ -36,24 +36,24 @@ if __name__ == '__main__':
     '''
     print(hello)
     # 3.用upper/lower转换字符串大小写
-    str = 'Money'
-    print(str.upper()+'\n',str.lower())
+    str1 = 'Money'
+    print(str1.upper() + '\n', str1.lower())
 
     # 4.下标索引字符串（配合切片）
     word = 'Arrested'
-    print(word[3],word[2:6],word[2:])
+    print(word[3], word[2:6], word[2:])
 
     # 5.注意：字符串不可改变
     # word[3] = 'p' 会报错
 
     # 6.字符串合并
-    word1 = 'h'+word[1:]
+    word1 = 'h' + word[1:]
     print(word1)
 
     print('————————————————————')
     # 2.1.4 列表
     # python为容器，中括号之间用逗号分割的一系列值
-    aa = ['china', 2, 3, 4, 2*2, ]
+    aa = ['china', 2, 3, 4, 2 * 2, ]
     print(aa)
 
     # 1.列表可以改变元素值
@@ -61,9 +61,46 @@ if __name__ == '__main__':
     print(aa[2])
 
     # 2.列表可以切片和改变大小
-    aa[0:2] = [1,12]
+    aa[0:2] = [1, 12]
     print(aa)
     aa[:0] = aa
     print(aa)
 
-    
+    print('————————————————————')
+    # 2.1.5 流程控制（选择和循环）
+    # 1.选择语句 - if elif else
+    x = int(input('请输入一个数字：'))
+    if x < 0:
+        x = 0
+        print('负数')
+    elif x == 0:
+        print(0)
+    else:
+        print('其他情况')
+
+    # 2.循环语句 - for、while
+    # for语句
+    a = ['cat', 'Windows', 'defenestrate']
+    for x in a[:]:
+        if len(x) > 6:
+            a.insert(0, x)
+    print(a)
+
+    # while语句
+    i = 0
+    while i < 5:
+        print(i)
+        i += 1
+
+    print('————————————————————')
+    # 2.1.6 函数（def 函数名(参数1,参数2..): 函数体）
+    def fib(n):
+        a, b = 0, 1
+        while b < n:
+            print(b)
+            a, b = b, a + b
+
+
+    f = fib
+    print(f(100))
+
